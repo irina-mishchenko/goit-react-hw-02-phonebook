@@ -18,7 +18,7 @@ class App extends Component {
 
   addContact = ({ name, number }) => {
     const { contacts } = this.state;
-    const identicalName = contacts.find(contact => {
+    const identicalName = contacts.some(contact => {
       return contact.name.toLowerCase() === name.toLowerCase();
     });
 

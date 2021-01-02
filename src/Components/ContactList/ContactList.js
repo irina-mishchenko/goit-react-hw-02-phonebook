@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-import ContactListItem from '../ContactListItem/ContactListItem';
+import ContactListItem from './ContactListItem/ContactListItem';
 
 import s from './ContactList.module.css';
 
@@ -13,8 +13,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
             contact={name}
             number={number}
             key={id}
-            onDeleteContact={onDeleteContact}
-            id={id}
+            onDeleteContact={() => onDeleteContact(id)}
           />
         );
       })}
