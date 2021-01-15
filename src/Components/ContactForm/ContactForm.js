@@ -4,6 +4,11 @@ import propTypes from 'prop-types';
 import s from './ContactForm.module.css';
 
 class ContactForm extends Component {
+  static propTypes = {
+    name: propTypes.string.isRequired,
+    number: propTypes.string.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -60,10 +65,5 @@ class ContactForm extends Component {
     );
   }
 }
-
-ContactForm.propTypes = {
-  name: propTypes.string.isRequired,
-  number: propTypes.string.isRequired,
-};
 
 export default ContactForm;

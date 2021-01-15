@@ -2,16 +2,13 @@ import propTypes from 'prop-types';
 
 import s from './ContactListItem.module.css';
 
-const ContactListItem = ({ contact, number, onDeleteContact, id }) => {
+const ContactListItem = ({ contact, number, onDeleteContact }) => {
   return (
     <li className={s.contactListItem}>
       <p className={s.contact}>
         {contact}: {number}
       </p>
-      <button
-        onClick={() => onDeleteContact(id)}
-        className={s.contactListButton}
-      >
+      <button onClick={onDeleteContact} className={s.contactListButton}>
         Delete
       </button>
     </li>
@@ -21,7 +18,7 @@ const ContactListItem = ({ contact, number, onDeleteContact, id }) => {
 ContactListItem.propTypes = {
   contact: propTypes.string.isRequired,
   number: propTypes.number.isRequired,
-  id: propTypes.string.isRequired,
+  onDeleteContact: propTypes.func.isRequired,
 };
 
 export default ContactListItem;
